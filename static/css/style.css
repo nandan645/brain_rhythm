@@ -2,10 +2,10 @@
    GLOBAL RESET & VARIABLES
 ================================ */
 :root {
-    --text-primary: #000;
-    --text-secondary: #000;
-    --text-muted: #000;
-    /* --overlay-dark: rgba(0, 0, 0, 0.55); */
+    --text-primary: #ffffff;
+    --text-secondary: #ffffff;
+    --text-muted: #ffffff;
+    --overlay-dark: rgba(0, 0, 0, 0.55);
 }
 
 * {
@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6,
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(6px);
     z-index: 1000;
 }
@@ -103,7 +103,8 @@ h1, h2, h3, h4, h5, h6,
 /* Content container */
 .hero-content {
     position: relative;
-    max-width: 900px;
+    /* Increased max-width to allow wider hero paragraph text */
+    max-width: 1200px;
     text-align: center;
     z-index: 2;
 }
@@ -129,8 +130,13 @@ h1, h2, h3, h4, h5, h6,
     line-height: 1.75;
     color: var(--text-muted);
 
+    /* Make hero paragraph text justified for better reading */
+    text-align: justify;
+    text-align-last: left;
+
     width: 100%;
-    max-width: 2000px;
+    /* Constrain paragraphs to the hero container width */
+    max-width: 1100px;
     min-width: 280px;
 
     margin: 0 auto;
@@ -151,7 +157,8 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .access-container {
-    max-width: 1100px;
+    /* Increase container width to match hero and allow wider paragraphs */
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
 }
@@ -170,7 +177,11 @@ h1, h2, h3, h4, h5, h6,
     line-height: 1.8;
     color: #222;
 
-    max-width: clamp(320px, 70%, 880px);
+    /* Justify paragraphs and allow them to expand with the container */
+    text-align: justify;
+    text-align-last: left;
+
+    max-width: 1100px;
     margin: 0 auto 22px auto;
 }
 
@@ -193,8 +204,8 @@ h1, h2, h3, h4, h5, h6,
     margin-top: 36px;
     padding: 14px 34px;
 
-    background-color: #000;
-    color: #fff;
+    background-color: #ffffff;
+    color: #000000;
 
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
@@ -203,7 +214,7 @@ h1, h2, h3, h4, h5, h6,
     text-transform: uppercase;
 
     text-decoration: none;
-    border: 1px solid #000;
+    border: 1px solid #ffffff;
     border-radius: 4px;
     transition: all 0.25s ease;
 }
@@ -211,7 +222,7 @@ h1, h2, h3, h4, h5, h6,
 /* Hover effect */
 .hero-btn:hover {
     background-color: transparent;
-    color: #000;
+    color: #ffffff;
 }
 
 /* ================================
@@ -222,8 +233,7 @@ h1, h2, h3, h4, h5, h6,
     background: linear-gradient(
         to bottom,
         #FFFFFF 0%,
-        #E6E5FE 50%,
-        #CDCBFD 100%
+        #F1E1DD 100%
     );
     text-align: center;
 }
@@ -242,7 +252,8 @@ h1, h2, h3, h4, h5, h6,
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px 36px;
-    max-width: 1400px;
+    /* Match site content width for consistent layout */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -292,7 +303,8 @@ h1, h2, h3, h4, h5, h6,
 
 /* Main footer area */
 .footer-main {
-    max-width: 1400px;
+    /* Match site content width for consistent layout */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 80px 48px;
     display: grid;
@@ -350,7 +362,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* Bottom bar */
 .footer-bottom {
-    background: #CDCBFD;
+    background: #F1E1DD;
     text-align: center;
     padding: 18px 16px;
 }
@@ -358,6 +370,9 @@ h1, h2, h3, h4, h5, h6,
 .footer-bottom p {
     font-size: 13px;
     color: #000;
+    /* Constrain bottom bar text to the same site width */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Spacing between link groups */
@@ -370,12 +385,12 @@ h1, h2, h3, h4, h5, h6,
 ================================ */
 .neural-hero {
     position: relative;
-    height: 80vh;
-    min-height: 520px;
+    /* Slightly reduced height for tighter hero presentation */
+    height: 65vh;
+    min-height: 420px;
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: url("../images/neural-clocks-hero.jpg") center / cover no-repeat;
 }
 
@@ -404,24 +419,6 @@ h1, h2, h3, h4, h5, h6,
     color: #111;
 }
 
-/* ================================
-   RESPONSIVE TUNING
-================================ */
-@media (max-width: 1024px) {
-    .neural-hero-content h1 {
-        font-size: 44px;
-    }
-}
-
-@media (max-width: 768px) {
-    .neural-hero {
-        height: 70vh;
-    }
-
-    .neural-hero-content h1 {
-        font-size: 34px;
-    }
-}
 /* ================================
    NEURAL CLOCK ARCHITECTURE SECTION
 ================================ */
@@ -453,7 +450,8 @@ h1, h2, h3, h4, h5, h6,
 /* Content container */
 .neural-architecture-container {
     position: relative;
-    max-width: 1100px;
+    /* Increase container width to match site layout and allow wider paragraphs */
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
 }
@@ -473,109 +471,10 @@ h1, h2, h3, h4, h5, h6,
     line-height: 1.85;
     color: rgba(255, 255, 255, 0.9);
 
-    max-width: clamp(320px, 75%, 900px);
+    /* Justify architecture paragraphs and allow them to expand with the container */
+    text-align: justify;
+    text-align-last: left;
+
+    max-width: 1100px;
     margin: 0 auto 22px auto;
-}
-
-/* ================================
-   RESPONSIVE TUNING
-================================ */
-@media (max-width: 768px) {
-    .neural-architecture {
-        padding: 80px 20px;
-    }
-
-    .neural-architecture-container h2 {
-        font-size: 28px;
-    }
-
-    .neural-architecture-container p {
-        font-size: 15px;
-    }
-}
-
-/* ================================
-   RESPONSIVE TUNING
-================================ */
-@media (max-width: 1024px) {
-    .hero-content h1 {
-        font-size: 44px;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        padding: 0 24px;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .hero-content h1 {
-        font-size: 38px;
-    }
-
-    .hero-content h2 {
-        font-size: 20px;
-    }
-
-    .hero-content p {
-        font-size: 15px;
-    }
-
-    .access-section {
-        padding: 80px 20px;
-    }
-
-    .access-container h2 {
-        font-size: 28px;
-    }
-
-    .access-container p {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .data-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 900px) {
-    .data-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .footer-main {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 60px 24px;
-    }
-
-    .footer-links {
-        text-align: left;
-    }
-
-    .footer-about p {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 600px) {
-    .data-types-section {
-        padding: 80px 20px;
-    }
-
-    .section-title {
-        font-size: 28px;
-    }
-
-    .data-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .data-card img {
-        height: 200px;
-    }
 }
