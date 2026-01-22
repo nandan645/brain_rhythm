@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <h1>NeuroResonance</h1>
+        <h2>Exploring the brain through electromagnetic resonance patterns</h2>
+
+        <p>
+            Welcome to NeuroResonance, the comprehensive brain database developed by Dr. Pushpendra Singh, currently working at the Sapiotectronics Lab, IKSMHA Centre, IIT Mandi, in collaboration with Dr. Anirban Bandyopadhyay at the Research Center for Materials Nanoarchitectonics (MANA) at NIMS, Japan.
+        </p>
+        <a href="#access-section" class="hero-btn">View Database</a>
+
+
+    </div>
+</section>
+<section class="access-section" id="access-section">
+    <div class="access-container">
+        <h2>How to access the database?</h2>
+
+        <p>
+            The data that are available already on this website, the visitors could
+            download it under the <a href="#" target="_blank">Creative Commons License</a>.
+        </p>
+
+        <p>
+            Users can access the Brain Database directly from the navigation bar. Select Brain from the menu to open a dropdown list of available brain data categories, and then choose the dataset of interest. Each selection will direct the user to a dedicated page corresponding to the chosen data type.
+        </p>
+
+    </div>
+</section>
+<section class="data-types-section">
+    <h2 class="section-title">Types of brain data</h2>
+
+    <div class="data-grid">
+        <div class="data-card">
+            <img src="{{ url_for('static', filename='images/data/simulation.jpg') }}" alt="Simulation Data">
+            <p>Simulation Data</p>
+        </div>
+
+        <div class="data-card">
+            <img src="{{ url_for('static', filename='images/data/experimental.jpg') }}" alt="Experimental Data">
+            <p>Experimental Data</p>
+        </div>
+
+        <div class="data-card">
+            <img src="{{ url_for('static', filename='images/data/clocking.jpg') }}" alt="Clocking Map Data">
+            <p>Clocking Map Data</p>
+        </div>
+
+        <div class="data-card">
+            <img src="{{ url_for('static', filename='images/data/functional.jpg') }}" alt="Functional Data">
+            <p>Functional Data – EEG and DDG</p>
+        </div>
+
+        <div class="data-card">
+            <img src="{{ url_for('static', filename='images/data/quantum.jpg') }}" alt="Quantum Vortex">
+            <p>Quantum Computer – Optical Vortex</p>
+        </div>
+
+        <div class="data-card">
+            <img src="{{ url_for('static', filename='images/data/protein.jpg') }}" alt="Protein Data">
+            <p>Protein & Complex</p>
+        </div>
+
+        <div class="data-card">
+            <img src="{{ url_for('static', filename='images/data/human.jpg') }}" alt="Human Subject Study">
+            <p>Human Subject Study</p>
+        </div>
+
+        <div class="data-card">
+            <img src="{{ url_for('static', filename='images/data/future.jpg') }}" alt="Future Applications">
+            <p>Future Enhancement – Medical Applications</p>
+        </div>
+    </div>
+</section>
+<footer class="site-footer">
+    <div class="footer-main">
+
+        <!-- Left: Description only -->
+        <div class="footer-about">
+            <h3>NeuroResonance Database</h3>
+
+            <p>
+                NeuroResonance Database brings together valuable brain information,
+                useful research tools, and expert knowledge in one place. Researchers
+                can use this resource to better understand how the human brain works.
+                Our database offers reliable methods and data that researchers around
+                the world can access to advance their work and make new discoveries
+                about the brain.
+            </p>
+        </div>
+
+        <!-- Right: Combined Links Column -->
+        <div class="footer-links">
+            <h4>Connect us</h4>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCkMHtWzaIwD38nW4smQN7jQ">
+                        YouTube
+                    </a>
+                </li>
+            </ul>
+
+            <h4 class="footer-subheading">About us</h4>
+            <ul>
+                <li><a href="#">Click here</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom copyright bar -->
+    <div class="footer-bottom">
+        <p>
+            Copyright © National Institute for Materials Science, NIMS Japan,
+            and Indian Institute of Technology, IIT Mandi India 2025
+        </p>
+    </div>
+</footer>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NeuroResonance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">NeuroResonance</div>
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="{{ url_for('neural_clocks') }}">Neural Clocks</a></li>
+        <!-- <li><a href="#">Neural Clocks</a></li> -->
+        <li><a href="#">Brain</a></li>
+        <li><a href="#">Human Study</a></li>
+        <li><a href="#">Medical</a></li>
+        <li><a href="#">Conference</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</nav>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,581 @@
+/* ================================
+   GLOBAL RESET & VARIABLES
+================================ */
+:root {
+    --text-primary: #000;
+    --text-secondary: #000;
+    --text-muted: #000;
+    /* --overlay-dark: rgba(0, 0, 0, 0.55); */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================================
+   BASE TYPOGRAPHY
+================================ */
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background-color: #000;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings & institutional text */
+h1, h2, h3, h4, h5, h6,
+.logo,
+.nav-links a {
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+}
+
+/* ================================
+   NAVIGATION BAR
+================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 64px;
+    padding: 0 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 26px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* ================================
+   HERO SECTION
+================================ */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    background: url("../images/hero-bg.jpg") center / cover no-repeat;
+}
+
+/* Overlay for contrast */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-dark);
+}
+
+/* Content container */
+.hero-content {
+    position: relative;
+    max-width: 900px;
+    text-align: center;
+    z-index: 2;
+}
+
+/* ================================
+   HERO TYPOGRAPHY
+================================ */
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.hero-content h2 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 24px;
+    color: var(--text-secondary);
+}
+
+.hero-content p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text-muted);
+
+    width: 100%;
+    max-width: 2000px;
+    min-width: 280px;
+
+    margin: 0 auto;
+}
+
+/* ================================
+   DATABASE ACCESS SECTION
+================================ */
+.access-section {
+    width: 100%;
+    padding: 120px 24px;
+    background: linear-gradient(
+        to bottom,
+        #f5f6f4 0%,
+        #f0f1ef 100%
+    );
+    color: #111;
+}
+
+.access-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Section title */
+.access-container h2 {
+    font-size: 34px;
+    font-weight: 500;
+    margin-bottom: 36px;
+}
+
+/* Paragraphs */
+.access-container p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #222;
+
+    max-width: clamp(320px, 70%, 880px);
+    margin: 0 auto 22px auto;
+}
+
+/* Links */
+.access-container a {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.access-container a:hover {
+    opacity: 0.75;
+}
+
+/* ================================
+   HERO BUTTON
+================================ */
+.hero-btn {
+    display: inline-block;
+    margin-top: 36px;
+    padding: 14px 34px;
+
+    background-color: #000;
+    color: #fff;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    text-decoration: none;
+    border: 1px solid #000;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.hero-btn:hover {
+    background-color: transparent;
+    color: #000;
+}
+
+/* ================================
+   TYPES OF BRAIN DATA SECTION
+================================ */
+.data-types-section {
+    padding: 120px 40px;
+    background: linear-gradient(
+        to bottom,
+        #FFFFFF 0%,
+        #E6E5FE 50%,
+        #CDCBFD 100%
+    );
+    text-align: center;
+}
+
+/* Section heading */
+.section-title {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    color: #111;
+}
+
+/* Grid layout */
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 36px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Individual cards */
+.data-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Images */
+.data-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: #fff;
+    /* border: 4px solid #ffffff;  */
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+/* Caption */
+.data-card p {
+    margin-top: 14px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #000000;
+    text-align: center;
+    max-width: 90%;
+}
+
+/* ================================
+   FOOTER
+================================ */
+.site-footer {
+    background: linear-gradient(
+        to bottom,
+        #f5f6f4 0%,
+        #f0f1ef 100%
+    );
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Main footer area */
+.footer-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 48px;
+    display: grid;
+    grid-template-columns: 2.5fr 0.5fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Left column: about */
+.footer-about {
+    text-align: left;
+}
+
+.footer-about p {
+    margin-top: 18px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #000;
+    max-width: 520px;
+}
+
+/* Right column: links */
+.footer-links {
+    text-align: right;
+}
+
+.footer-links h4 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+/* Reset list alignment */
+.footer-links ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+/* Links */
+.footer-links a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: #000;
+    font-size: 15px;
+}
+
+.footer-links a:hover {
+    opacity: 0.7;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    background: #CDCBFD;
+    text-align: center;
+    padding: 18px 16px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #000;
+}
+
+/* Spacing between link groups */
+.footer-subheading {
+    margin-top: 24px;
+}
+
+/* ================================
+   NEURAL CLOCKS HERO SECTION
+================================ */
+.neural-hero {
+    position: relative;
+    height: 80vh;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: url("../images/neural-clocks-hero.jpg") center / cover no-repeat;
+}
+
+/* Soft overlay for text contrast */
+.neural-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.55);
+}
+
+/* Content */
+.neural-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    text-align: center;
+    padding: 0 24px;
+}
+
+/* Headline */
+.neural-hero-content h1 {
+    font-family: 'IBM Plex Sans', serif;
+    font-size: 54px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: #111;
+}
+
+/* ================================
+   RESPONSIVE TUNING
+================================ */
+@media (max-width: 1024px) {
+    .neural-hero-content h1 {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 768px) {
+    .neural-hero {
+        height: 70vh;
+    }
+
+    .neural-hero-content h1 {
+        font-size: 34px;
+    }
+}
+/* ================================
+   NEURAL CLOCK ARCHITECTURE SECTION
+================================ */
+.neural-architecture {
+    position: relative;
+    padding: 120px 24px;
+    background: linear-gradient(
+        135deg,
+        #2f2a4a 0%,
+        #3a315e 45%,
+        #4a3b73 100%
+    );
+    color: #fff;
+}
+
+/* Optional subtle texture effect */
+.neural-architecture::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(255,255,255,0.06),
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+/* Content container */
+.neural-architecture-container {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Heading */
+.neural-architecture-container h2 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+    margin-bottom: 36px;
+}
+
+/* Paragraphs */
+.neural-architecture-container p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.9);
+
+    max-width: clamp(320px, 75%, 900px);
+    margin: 0 auto 22px auto;
+}
+
+/* ================================
+   RESPONSIVE TUNING
+================================ */
+@media (max-width: 768px) {
+    .neural-architecture {
+        padding: 80px 20px;
+    }
+
+    .neural-architecture-container h2 {
+        font-size: 28px;
+    }
+
+    .neural-architecture-container p {
+        font-size: 15px;
+    }
+}
+
+/* ================================
+   RESPONSIVE TUNING
+================================ */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 24px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content h2 {
+        font-size: 20px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .access-section {
+        padding: 80px 20px;
+    }
+
+    .access-container h2 {
+        font-size: 28px;
+    }
+
+    .access-container p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .data-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .data-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 60px 24px;
+    }
+
+    .footer-links {
+        text-align: left;
+    }
+
+    .footer-about p {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .data-types-section {
+        padding: 80px 20px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .data-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .data-card img {
+        height: 200px;
+    }
+}
