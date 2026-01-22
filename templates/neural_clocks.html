@@ -42,5 +42,144 @@
         </p>
     </div>
 </section>
+<section class="neural-media">
+    <div class="neural-media-container">
+
+        <!-- LEFT: GIF -->
+        <div class="neural-media-block">
+            <div class="neural-media-frame">
+                <img
+                    src="{{ url_for('static', filename='media/brain-clock-architecture.gif') }}"
+                    alt="Integrated brain clock architectures across scales"
+                />
+            </div>
+            <p class="media-caption">
+                Multiscale clock architectures spanning neural domains,
+                brain regions, and peripheral networks.
+            </p>
+        </div>
+
+        <!-- RIGHT: VIDEO -->
+        <div class="neural-media-block">
+            <div class="neural-media-frame">
+                <video
+                    preload="metadata"
+                    controls
+                >
+                    <source
+                        src="{{ url_for('static', filename='media/polyatomic-time-crystal.mp4') }}"
+                        type="video/mp4"
+                    >
+                </video>
+            </div>
+            <p class="media-caption">
+                Polyatomic time crystal model illustrating layered
+                temporal ordering in neural systems.
+            </p>
+        </div>
+    </div>
+</section>
+<section class="time-crystal-section">
+    <div class="time-crystal-container">
+
+        <!-- LEFT: LOCAL VIDEO -->
+        <div class="time-crystal-video">
+            <video
+                controls
+                preload="metadata"
+                poster="{{ url_for('static', filename='images/time-crystal-poster.jpg') }}"
+            >
+                <source
+                    src="{{ url_for('static', filename='media/time-crystal-human-brain.mp4') }}"
+                    type="video/mp4"
+                >
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- RIGHT: TITLE TEXT -->
+        <div class="time-crystal-text">
+            <h2>
+                Time crystal model of the<br>
+                human brain with 1073<br>
+                types of clocks
+            </h2>
+        </div>
+
+    </div>
+</section>
+<section class="special-issues">
+    <div class="special-issues-container">
+
+        <div class="special-issue-card">
+            <img
+                src="{{ url_for('static', filename='images/special-issue-electronics-health.png') }}"
+                alt="Trends in Electronics and Health Informatics special issue"
+            >
+            <p class="special-issue-link">
+                <a href="https://www.mdpi.com/journal/information/special_issues/TEHI" target="_blank">Please click here to submit paper</a>
+            </p>
+        </div>
+
+        <div class="special-issue-card">
+            <img
+                src="{{ url_for('static', filename='images/special-issue-computational-cognitive.png') }}"
+                alt="Trends in Computational and Cognitive Engineering special issue"
+            >
+            <p class="special-issue-link">
+                <a href="https://www.mdpi.com/journal/information/special_issues/TCCE" target="_blank">Please click here to submit paper</a>
+            </p>
+        </div>
+
+    </div>
+</section>
+<section class="books-section">
+    <div class="books-container">
+
+        <!-- LEFT BOOK -->
+        <div class="book-column">
+            <img
+                src="{{ url_for('static', filename='images/book-biological-antenna.png') }}"
+                alt="Biological Antenna to the Humanoid Bot book cover"
+                class="book-cover"
+            >
+
+            <p class="book-description">
+                This <a href="https://link.springer.com/book/10.1007/978-981-16-9677-0" class="inline-book-link">book</a> reimagines biological systems
+                as sophisticated oscillatory networks, challenging conventional perspectives by
+                presenting a clock-based philosophy where all elements operate in synchronized
+                harmony. We propose that living systems function through intricate arrangements
+                of coordinated rhythms or “clocks”, spanning from molecular processes to
+                whole-body functions. This temporal framework provides fresh insights into
+                consciousness and cognition as emergent properties of multi-scale rhythmic
+                integration rather than isolated phenomena.
+            </p>
+        </div>
+
+        <!-- RIGHT BOOK -->
+        <div class="book-column">
+            <img
+                src="{{ url_for('static', filename='images/book-studies-rhythm-engineering.png') }}"
+                alt="Studies in Rhythm Engineering book cover"
+                class="book-cover"
+            >
+
+            <p class="book-link">
+                <a href="https://www.springer.com/series/16136" target="_blank">
+                    Submit chapter or proposal to write book
+                </a>
+            </p>
+        </div>
+
+    </div>
+</section>
+<footer class="site-footer">
+    <div class="footer-bottom">
+        <p>
+            Copyright © National Institute for Materials Science, NIMS Japan,
+            and Indian Institute of Technology, IIT Mandi India 2025
+        </p>
+    </div>
+</footer>
 
 {% endblock %}

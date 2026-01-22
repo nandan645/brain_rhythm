@@ -398,7 +398,8 @@ h1, h2, h3, h4, h5, h6,
 .neural-hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.55);
+    /* Use same dark overlay as the homepage for consistent contrast */
+    background: var(--overlay-dark);
 }
 
 /* Content */
@@ -416,7 +417,8 @@ h1, h2, h3, h4, h5, h6,
     font-size: 54px;
     font-weight: 500;
     line-height: 1.25;
-    color: #111;
+    /* Ensure heading is visible over the dark overlay */
+    color: var(--text-primary);
 }
 
 /* ================================
@@ -477,4 +479,271 @@ h1, h2, h3, h4, h5, h6,
 
     max-width: 1100px;
     margin: 0 auto 22px auto;
+}
+
+/* ================================
+   NEURAL MEDIA SECTION
+================================ */
+.neural-media {
+    padding: 120px 40px;
+    background: linear-gradient(
+        to bottom,
+        #eef0ed 0%,
+        #e6e8e4 100%
+    );
+    color: #111;
+}
+
+.neural-media-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+/* Shared block styling */
+.neural-media-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* GIF styling */
+.neural-gif {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+}
+
+/* Video wrapper */
+.neural-video-wrapper {
+    width: 100%;
+    background: #000;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+}
+
+/* Video element */
+.neural-video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Caption */
+.media-caption {
+    margin-top: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+    max-width: 90%;
+}
+
+/* Shared fixed-ratio container */
+.neural-media-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* pick 16:9 or 1:1 based on your assets */
+    background: #000;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+}
+
+/* Media inside frame */
+.neural-media-frame img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+.neural-media-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ================================
+   TIME CRYSTAL SECTION
+================================ */
+.time-crystal-section {
+    padding: 140px 40px;
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.45),
+            rgba(0,0,0,0.45)
+        ),
+        url("../images/geometric-pattern-bg.png") center / cover no-repeat;
+    color: #ffffff;
+}
+
+.time-crystal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 64px;
+    align-items: center;
+}
+
+/* Video */
+.time-crystal-video video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 4px;
+    background: #000;
+}
+
+
+/* Text block */
+.time-crystal-text {
+    text-align: left;
+}
+
+.time-crystal-text h2 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.45;
+    color: #ffffff;
+}
+
+/* ================================
+   SPECIAL ISSUES SECTION
+================================ */
+.special-issues {
+    padding: 120px 40px;
+    background: linear-gradient(
+        to bottom,
+        #f5f6f4 0%,
+        #eeeeee 100%
+    );
+}
+
+.special-issues-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+}
+
+/* Card */
+.special-issue-card {
+    text-align: center;
+}
+
+/* Journal image */
+.special-issue-card img {
+    width: 100%;
+    height: auto;
+    background: #ffffff;
+    border-radius: 2px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+}
+
+/* Submission link */
+.special-issue-link {
+    margin-top: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+.special-issue-link a {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.special-issue-link a:hover {
+    opacity: 0.7;
+}
+
+/* ================================
+   BOOKS SECTION (MATCH IMAGE)
+================================ */
+.books-section {
+    padding: 140px 40px;
+    background: linear-gradient(
+        to bottom,
+        #eef3f4 0%,
+        #f6f8f9 100%
+    );
+}
+
+.books-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* Each column */
+.book-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Book cover */
+.book-cover {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+/* Left description */
+.book-description {
+    margin-top: 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.85;
+    color: #111;
+    text-align: justify;
+    text-align-last: left;
+}
+
+/* Right link */
+.book-link {
+    margin-top: 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+.book-link a {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.book-link a:hover {
+    opacity: 0.7;
+}
+
+/* Inline book link */
+.inline-book-link {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.inline-book-link:hover {
+    opacity: 0.7;
 }
