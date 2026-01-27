@@ -19,16 +19,80 @@
     </div>
 
     <ul class="nav-links">
-        <!-- <li><a href="#">Home</a></li> -->
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('neural_clocks') }}">Neural Clocks</a></li>
-        <!-- <li><a href="#">Neural Clocks</a></li> -->
-        <li><a href="#">Brain</a></li>
+
+        <li class="nav-item dropdown">
+            <a href="#">Brain ▾</a>
+            <ul class="dropdown-menu">
+                <li class="dropdown-submenu">
+                    <a href="#">Brain Components ▸</a>
+                    <ul class="submenu">
+                        <li><a href="#">Cerebellum</a></li>
+                        <li><a href="#">Hippocampus</a></li>
+                        <li><a href="#">Blood Vessel Network</a></li>
+                        <li><a href="#">Hypothalamus</a></li>
+                        <li class="dropdown-submenu">
+                            <a href="#">Microtubule ▸</a>
+                            <ul class="submenu">
+                                <li><a href="#">Tubulin</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Cranial Nerve</a></li>
+                        <li><a href="#">Thalamic Body</a></li>
+                        <li><a href="#">Thoracic Nerve</a></li>
+                        <li><a href="#">Cortical Branches</a></li>
+                        <li><a href="#">Neuron</a></li>
+                        <li><a href="#">Skin Nerve Net</a></li>
+                        <li><a href="#">Cortex Domain</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Resonance Clocks</a></li>
+                <li class="dropdown-submenu">
+                    <a href="#">EEG and DDG ▸</a>
+                    <ul class="submenu">
+                        <li><a href="#">Tutorial</a></li>
+                        <li><a href="#">EEG Music</a></li>
+                        <li><a href="#">DDG Device First Prototype</a></li>
+                        <li><a href="#">Both Artificial brain</a></li>
+                        <li><a href="#">Artificial vs Human Brain</a></li>
+                        <li><a href="#">Both Human Brains</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
         <li><a href="#">Human Subject Study</a></li>
-        <li><a href="#">Optical Vortices based Quantum Computer</a></li>
-        <li><a href="#">Protein</a></li>
-        <li><a href="#">Medical</a></li>
-        <li><a href="#">Conference</a></li>
+        <li><a href="{{ url_for('quantum_computer') }}">Optical Vortices based Quantum Computer</a></li>
+
+        <li class="nav-item dropdown">
+            <a href="#">Medical Application ▾</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Cancer</a></li>
+                <li><a href="#">Schizophrenia</a></li>
+                <li><a href="#">Alzheimers</a></li>
+                <li><a href="#">Thrombosis</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a href="#">Protein ▾</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Circuit</a></li>
+                <li><a href="#">Vortex synthesis</a></li>
+                <li><a href="#">Water</a></li>
+                <li><a href="#">e-pi-phi</a></li>
+                <li><a href="#">up-down-conversion</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a href="#">Conference ▾</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Matrisneha</a></li>
+                <li><a href="#">Garima</a></li>
+                <li><a href="#">Surobane</a></li>
+            </ul>
+        </li>
         <li><a href="#">About</a></li>
     </ul>
 </nav>

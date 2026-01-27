@@ -761,3 +761,154 @@ h1, h2, h3, h4, h5, h6,
 .inline-book-link:hover {
     opacity: 0.7;
 }
+
+/* ================================
+   QUANTUM COMPUTER PAGE
+================================ */
+
+/* HERO */
+.quantum-hero {
+    height: 420px;
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("../images/quantum-hero-bg.jpg") center / cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.quantum-hero h1 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #ffffff;
+}
+
+/* BASE SECTION */
+.quantum-section {
+    padding: 120px 40px;
+}
+
+/* AUTOMATIC ODD / EVEN BACKGROUNDS */
+.quantum-section:nth-of-type(odd) {
+    background: #a6d2f7;
+}
+
+.quantum-section:nth-of-type(even) {
+    background: #ffffff;
+}
+
+/* CONTAINER */
+.quantum-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* VIDEO FRAME */
+.quantum-video-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.quantum-video-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+}
+
+/* TEXT */
+.quantum-text h2 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 16px;
+}
+
+.quantum-text p {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #111;
+}
+
+/* ================================
+   NAVBAR DROPDOWN (MULTI-LEVEL)
+================================ */
+
+.nav-item {
+    position: relative;
+}
+
+/* Base dropdown menu */
+.dropdown-menu,
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    background: #0b0d14;
+    backdrop-filter: blur(6px);
+
+    list-style: none;
+    padding: 12px 0;
+    margin: 0;
+
+    min-width: 220px;
+
+    display: none;
+    z-index: 1000;
+}
+
+/* First-level dropdown */
+.nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+/* Submenus (all deeper levels) */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .submenu {
+    top: -12px;
+    left: 100%;
+}
+
+/* Show submenu on hover */
+.dropdown-submenu:hover > .submenu {
+    display: block;
+}
+
+/* Links */
+.dropdown-menu a,
+.submenu a {
+    display: block;
+    padding: 10px 20px;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #ffffff;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover,
+.submenu a:hover {
+    background: rgba(255, 255, 255, 0.08);
+}

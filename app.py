@@ -10,6 +10,11 @@ def home():
 def neural_clocks():
     return render_template("neural_clocks.html")
 
+@app.route("/quantum-computer")
+def quantum_computer():
+    return render_template("quantum_computer.html")
+
+
 if __name__ == "__main__":
     app.run()
 
