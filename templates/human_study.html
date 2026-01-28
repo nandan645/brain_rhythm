@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="human-study-hero">
+    <h1>Human Subject Study</h1>
+</section>
+
+<!-- IR DATA -->
+<section class="ir-data-section">
+    <h2>IR Data</h2>
+
+    <div class="ir-grid">
+
+        {% for i in range(1, 85) %}
+        <div class="ir-card">
+            <p class="ir-label">Human Subject {{ i }}</p>
+
+            <div class="ir-video-frame">
+                <video
+                    controls
+                    preload="metadata"
+                    playsinline
+                >
+                    <source
+                        src="https://data.abhinandan.tech/human-subject-study/ir-data/human_participant_{{ i }}.mp4"
+                        type="video/mp4"
+                    >
+                </video>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-bottom">
+        <p>
+            Copyright © National Institute for Materials Science, NIMS Japan,
+            and Indian Institute of Technology, IIT Mandi India 2025
+        </p>
+    </div>
+</footer>
+
+{% endblock %}

@@ -763,6 +763,99 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* ================================
+   HUMAN SUBJECT STUDY – IR VIDEOS
+================================ */
+
+/* Hero */
+.human-study-hero {
+    height: 360px;
+    background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("../images/human-study-banner.jpg") center / cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.human-study-hero h1 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* IR Section */
+.ir-data-section {
+    background: #ffffff;
+    padding: 100px 40px 140px;
+}
+
+.ir-data-section h2 {
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 80px;
+    color: #111;
+}
+
+/* CARD */
+.ir-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Label */
+.ir-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+/* GRID — 4 COLUMNS */
+.ir-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 50px;
+
+    align-items: start;
+}
+
+/* VIDEO FRAME — LARGER */
+.ir-video-frame {
+    width: 100%;
+    height: 220px;
+    
+    background: #000;
+    border-radius: 6px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+
+    position: relative;
+}
+
+/* VIDEO — COVER */
+.ir-video-frame video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    background: #000;
+
+    display: block;
+}
+
+
+/* ================================
    QUANTUM COMPUTER PAGE
 ================================ */
 

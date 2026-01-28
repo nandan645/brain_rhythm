@@ -10,6 +10,10 @@ def home():
 def neural_clocks():
     return render_template("neural_clocks.html")
 
+@app.route("/human-study")
+def human_study():
+    return render_template("human_study.html")
+
 @app.route("/quantum-computer")
 def quantum_computer():
     return render_template("quantum_computer.html")
