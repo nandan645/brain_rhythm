@@ -67,30 +67,31 @@
         <li class="nav-item dropdown">
             <a href="#">Medical Application ▾</a>
             <ul class="dropdown-menu">
-                <li><a href="#">Cancer</a></li>
-                <li><a href="#">Schizophrenia</a></li>
-                <li><a href="#">Alzheimers</a></li>
-                <li><a href="#">Thrombosis</a></li>
+                <li><a href="{{ url_for('cancer') }}">Cancer</a></li>
+                <li><a href="{{ url_for('schizophrenia') }}">Schizophrenia</a></li>
+                <li><a href="{{ url_for('alzheimers') }}">Alzheimers</a></li>            
+                <li><a href="{{ url_for('thrombosis') }}">Thrombosis</a></li>
             </ul>
         </li>
 
         <li class="nav-item dropdown">
-            <a href="#">Protein ▾</a>
+            <a href="{{ url_for('protein') }}">Protein ▾</a>
             <ul class="dropdown-menu">
-                <li><a href="#">Circuit</a></li>
-                <li><a href="#">Vortex synthesis</a></li>
-                <li><a href="#">Water</a></li>
-                <li><a href="#">e-pi-phi</a></li>
-                <li><a href="#">up-down-conversion</a></li>
+                <li><a href="{{ url_for('circuit') }}">Circuit</a></li>
+                <li><a href="{{ url_for('vortex_synthesis') }}">Vortex synthesis</a></li>
+                <li><a href="{{ url_for('water') }}">Water</a></li>
+                <li><a href="{{ url_for('e_pi_phi') }}">e-pi-phi</a></li>
+                <li><a href="{{ url_for('up_down_conversion') }}">up-down-conversion</a></li>
             </ul>
         </li>
 
         <li class="nav-item dropdown">
             <a href="#">Conference ▾</a>
             <ul class="dropdown-menu">
-                <li><a href="#">Matrisneha</a></li>
-                <li><a href="#">Garima</a></li>
-                <li><a href="#">Surobane</a></li>
+                <li><a href="{{ url_for('matrisneha') }}">Matrisneha</a></li>
+                <li><a href="{{ url_for('garima') }}">Garima</a></li>
+                <li><a href="{{ url_for('surobane') }}">Surobane</a></li>
+                
             </ul>
         </li>
         <li><a href="#">About</a></li>

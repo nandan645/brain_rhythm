@@ -912,3 +912,273 @@ h1, h2, h3, h4, h5, h6,
 .submenu a:hover {
     background: rgba(255, 255, 255, 0.08);
 }
+
+
+/* ================================
+   UNIVERSAL TEXT-FOCUSED PAGE
+   (Medical / Concept / Application)
+================================ */
+
+/* HERO (shared) */
+.page-hero {
+    height: 420px;
+    background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        var(--hero-image) center / cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+/* CONTENT (text-only) */
+.page-content {
+    background: #f3e6e0;
+    padding: 140px 40px;
+    min-height: calc(100vh - 420px);
+}
+
+.page-text {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.page-text h2 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #111;
+    margin-bottom: 32px;
+}
+
+.page-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #222;
+
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: left;
+}
+
+/* ================================
+   PAGE VARIANT: MEDIA + TEXT
+================================ */
+
+.page-media-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* MEDIA */
+.page-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* TEXT (inherits from universal page-text) */
+.page-text h2 {
+    margin-bottom: 32px;
+}
+
+/* Secondary text block under media+text */
+.page-text-secondary {
+    margin-top: 100px;
+    max-width: 1200px;
+}
+
+/* ================================
+   GARIMA PAGE
+================================ */
+
+.garima-content {
+    background: #f1e1dd;
+}
+
+.garima-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* LEFT COLUMN */
+.garima-artwork img {
+    width: 100%;
+    display: block;
+    margin-bottom: 40px;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.garima-credit {
+    font-size: 14px;
+    color: black;
+    margin-top: 12px;
+}
+
+/* RIGHT COLUMN */
+.garima-text h2 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 28px;
+    color: black;
+}
+
+.garima-text h3 {
+    margin-top: 40px;
+    margin-bottom: 16px;
+    font-size: 20px;
+    color: black;
+}
+
+.garima-text p,
+.garima-text li {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: black;
+}
+
+.garima-text ol {
+    padding-left: 22px;
+}
+
+/* LINKS */
+.garima-text a {
+    color: black;
+    text-decoration: underline;
+}
+
+
+.garima-speakers-intro-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ================================
+   GARIMA – SPEAKERS
+================================ */
+
+/* Intro text bar */
+.garima-speakers-intro {
+    background: #e6f2f4;
+    padding: 40px 60px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #111;
+}
+
+/* Grid container */
+.garima-speakers {
+    background: #cfeef0;
+    padding: 120px 60px;
+}
+
+.garima-speakers-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+    text-align: center;
+}
+
+/* Speaker card */
+.speaker-card img {
+    width: 260px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-bottom: 24px;
+}
+
+/* Name */
+.speaker-card h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.speaker-card h3 a {
+    color: #111;
+    text-decoration: underline;
+}
+
+/* Description */
+.speaker-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #111;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* ================================
+   GARIMA – PDF SECTION
+================================ */
+
+.garima-pdf {
+    background: #e6f2f4; /* subtle neutral, matches page tone */
+    padding: 120px 40px;
+}
+
+.garima-pdf-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.garima-pdf-container iframe {
+    width: 100%;
+    height: 80vh;          /* good reading height */
+    border: none;
+    border-radius: 4px;
+    background: #ffffff;
+}
+
+/* ================================
+   WIDE MEDIA SECTION (CAPPED WIDTH)
+================================ */
+
+.full-width-media {
+    width: 100%;
+    background: #fafafa;              /* or your page background */
+    padding: 80px 40px;            /* breathing space */
+}
+
+.full-width-media img {
+    width: 100%;
+    max-width: 1200px;             /* <-- KEY LINE */
+    margin: 0 auto;
+    display: block;
+    height: auto;
+}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- HERO -->
+<section
+    class="page-hero"
+    style="--hero-image: url('../images/matrisneha-hero-bg.jpg');"
+>
+    <h1>Matrisneha</h1>
+</section>
+
+<!-- CONTENT -->
+<section class="page-content">
+    <div class="page-media-container">
+
+        <!-- TOP: MEDIA + TEXT ROW -->
+        <div class="page-media">
+            <img
+                src="{{ url_for('static', filename='images/matrisneha-therapy.png') }}"
+                alt="Pulse Electromagnetic Field Therapy benefits"
+            >
+        </div>
+
+        <div class="page-text">
+            <h2>
+                Medical alternative therapeutic rhythms inducing natural
+                electromagnetic healing and adaptation (Matrisneha)
+            </h2>
+
+            <p>
+                The NeuroResonance Database has polyatomic time crystals or 3D clock
+                assemblies representing almost all major organs, cellular components
+                and even proteins. Natural map of 3D clock assemblies are foundation
+                of its functional operation in a biological system. Therefore,
+                polyatomic time crystal maps of the biomaterials provides an
+                opportunity for us to design wide ranges of bio-inspired molecular
+                machines that replicates nested biorhythms and assists in regenerating
+                and correcting the protein regeneration cycles of the body.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM: CONTINUATION TEXT (FULL WIDTH, CENTERED) -->
+    <div class="page-text page-text-secondary">
+        <p>
+            We plan to redefine medical science by direct, indirect and agent based
+            interventions by developing rhythm engineering built therapeutics.
+            Here are some of the fundamentals of the new medical science that we
+            wish to develop.
+        </p>
+
+        <p>
+            1. Chemical responses are not absolute as it exists in the medical science,
+            it is part of different modes of interactions that govern the biological
+            system. Therefore, a more efficient universal language is used to interact
+            and negotiate with the biological system to govern its functioning in more
+            holistic way.
+        </p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-bottom">
+        <p>
+            Copyright © National Institute for Materials Science, NIMS Japan,
+            and Indian Institute of Technology, IIT Mandi India 2025
+        </p>
+    </div>
+</footer>
+
+{% endblock %}

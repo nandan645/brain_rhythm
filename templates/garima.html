@@ -1,0 +1,271 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- HERO -->
+<section
+    class="page-hero"
+    style="--hero-image: url('../images/matrisneha-hero-bg.jpg');"
+>
+    <h1>GARIMA</h1>
+</section>
+
+<!-- CONTENT -->
+<section class="page-content garima-content">
+    <div class="garima-container">
+
+        <!-- LEFT: ARTWORK STACK -->
+        <div class="garima-artwork">
+            <img src="{{ url_for('static', filename='images/garima-art-1.png') }}" alt="GARIMA artwork 1">
+            <img src="{{ url_for('static', filename='images/garima-art-2.png') }}" alt="GARIMA artwork 2">
+            <img src="{{ url_for('static', filename='images/garima-art-3.png') }}" alt="GARIMA artwork 3">
+            <p class="garima-credit">Music & Perception artwork by Robert Strati</p>
+        </div>
+
+        <!-- RIGHT: TEXT -->
+        <div class="garima-text">
+            <h2>
+                Glimpses of applied research on Indian music<br>
+                & art (GARIMA)
+            </h2>
+
+            <p>
+                <strong>GARIMA</strong> is an international meeting series organized by
+                <a href="http://www.brainrhythm.org/">brainrhythm database</a>, a joint effort by
+                <a href="http://www.nims.go.jp/">National Institute for Materials Science</a>, Japan and
+                <a href="http://www.buffalo.edu/">University at Buffalo</a>, USA in association with
+                <a href="http://www.iioir.org/">International Institute of Invincible Rhythms</a>.
+                Our first meeting would be on 19th March 2022, from 10.00AM to 5pm
+                Indian standard time, IST.
+            </p>
+
+            <p>
+                Scroll below the speakers for the schedule of meeting.
+                Register <a href="https://bit.ly/3tWuib4">here</a>.
+            </p>
+
+            <p>
+                To join google meet click here or copy paste<br>
+                <a href="https://meet.google.com/uwj-afnw-ucm">meet.google.com/uwj-afnw-ucm</a>
+            </p>
+
+            <h3>Topics to cover:</h3>
+            <ol>
+                <li>Identifying the pattern of frequencies and musical features connected to brain disease and its relief. Is there a hidden grammar?</li>
+                <li>Inventing new musical instruments to incorporate both Indian music and biological rhythms.</li>
+                <li>Studying human subjects with state-of-the-art technologies for a better understanding of the musical connection with emotion and perception.</li>
+                <li>Exploring geometric pattern of frequencies in Raga and mathematics embedded in the Indian music and art of various forms, anharmonic overtones.</li>
+                <li>Developing a scientific method for composing music: the role of language and perceptions of words, a perspective on Sanskrit.</li>
+            </ol>
+        </div>
+
+    </div>
+</section>
+
+<!-- SPEAKERS INTRO -->
+<section class="garima-speakers-intro">
+    <div class="garima-speakers-intro-container">
+        <p>
+            Please click on the name to learn more about the person. Speakers would
+            present their key achievements in the sequence below, experiences and
+            visions in a very short time (10-15 minutes), which we cannot learn from
+            their publicly available lectures and literatures. It's a free conversation,
+            no strict time limit.
+        </p>
+    </div>
+</section>
+
+<!-- SPEAKERS GRID -->
+<section class="garima-speakers">
+    <div class="garima-speakers-container">
+
+        <!-- Speaker 1 -->
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/kaustuv.jpg') }}" alt="Kaustuv Kanti Ganguli">
+            <h3><a href="#">Kaustuv Kanti Ganguli</a></h3>
+            <p>
+                Temporal architecture of notations in a Raga and engineering of
+                vocal styles in Indian Raga
+            </p>
+        </div>
+
+        <!-- Speaker 2 -->
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/archi.jpg') }}" alt="Archi Banerjee">
+            <h3><a href="#">Archi Banerjee</a></h3>
+            <p>
+                Music of a brain and music on the brain. EEG rhythms and
+                fractal analysis
+            </p>
+        </div>
+
+        <!-- Speaker 3 -->
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/anirban.jpg') }}" alt="Anirban Dutta">
+            <h3><a href="#">Anirban Dutta</a></h3>
+            <p>
+                Portable neuroimaging of the recovery of consciousness
+                following acute brain injury and the role of music
+            </p>
+        </div>
+
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/hema.jpg') }}" alt="Hema Murty">
+            <h3><a href="#">Hema Murty</a></h3>
+            <p>
+                Biological zero shot learning, speech recognition, role of group delay
+                and hierarchical organization of signals in cognition
+            </p>
+        </div>
+
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/averi.jpg') }}" alt="Averi Sarkar">
+            <h3><a href="#">Averi Sarkar</a></h3>
+            <p>
+                While working with autistic patients she discovered that different autistic
+                patients require very different kinds of music for healing
+            </p>
+        </div>
+
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/nandini.jpg') }}" alt="Nandini Chatterjee">
+            <h3><a href="#">Nandini Chatterjee</a></h3>
+            <p>
+                Trying to understand why musical perceptions are different for different
+                persons. Acoustic keys to musical emotions
+            </p>
+        </div>
+
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/anilesh.jpg') }}" alt="Anilesh Dey">
+            <h3><a href="#">Anilesh Dey</a></h3>
+            <p>
+                RS-GAN: an automated approach to study the effect of Rabindra Sangeet
+                in the autonomic nervous system (ANS)
+            </p>
+        </div>
+
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/shreehari.jpg') }}" alt="Shreehari V Gokarnakar">
+            <h3><a href="#">Shreehari V Gokarnakar</a></h3>
+            <p>
+                Applying Natyashastra, Chhandashastra and Vyakaranashastra in composing
+                Sanskrit songs; interested in applied artificial intelligence
+            </p>
+        </div>
+
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/vinoo.jpg') }}" alt="Vinoo Alluri">
+            <h3><a href="#">Vinoo Alluri</a></h3>
+            <p>
+                Effects of music on emotions with and without lyrics, correlating brain's
+                neural networks with musical timbre, key and rhythm
+            </p>
+        </div>
+
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/kp.jpg') }}" alt="K P Miyapuram">
+            <h3><a href="#">K. P. Miyapuram</a></h3>
+            <p>
+                Decision neuroscience, learning of the brain, human emotion and
+                functional center activities of the brain
+            </p>
+        </div>
+
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/anirban-andyopadhyay.jpg') }}" alt="Anirban Bandyopadhyay">
+            <h3><a href="#">Anirban Bandyopadhyay</a></h3>
+            <p>
+                Interested in inventing and characterizing musical instruments to map
+                brain activity while performing art and music
+            </p>
+        </div>
+
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/shantala.jpg') }}" alt="Shantala Hegde">
+            <h3><a href="#">Shantala Hegde</a></h3>
+            <p>
+                Music-based therapy for schizophrenia, traumatic brain injury,
+                Parkinson's disorder and neuropsychological disorders
+            </p>
+        </div>
+
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/venkata.jpg') }}" alt="Venkata Subramanian Viraraghavan">
+            <h3><a href="#">Venkata Subramanian Viraraghavan</a></h3>
+            <p>
+                Scientific analysis of music and its impact on the human brain
+            </p>
+        </div>
+
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/sreenivas.jpg') }}" alt="Sreenivas Reddy">
+            <h3><a href="#">Sreenivas Reddy</a></h3>
+            <p>
+                Sanskrit scholar focused on the Vijayanagara empire; interested in
+                multi-instrumental ensemble compositions
+            </p>
+        </div>
+
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/deepak.jpg') }}" alt="Deepak Ghosh">
+            <h3><a href="#">Deepak Ghosh</a></h3>
+            <p>
+                Multifractal analysis of frequency responses in musical architecture
+                and non-linear brain dynamics
+            </p>
+        </div>
+
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/pallab.jpg') }}" alt="Pallab Dasgupta">
+            <h3><a href="#">Pallab Dasgupta</a></h3>
+            <p>
+                Deep structure of Indian Ragas as semi-lexical languages and creative
+                liberty from a cognitive perspective
+            </p>
+        </div>
+
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/nihar.jpg') }}" alt="Nihar Ranjan Jana">
+            <h3><a href="#">Nihar Ranjan Jana</a></h3>
+            <p>
+                Neuroscientist studying memory and learning disorders; contributions
+                to Alzheimer's, Huntington's and Parkinson's diseases
+            </p>
+        </div>
+
+        <div class="speaker-card">
+            <img src="{{ url_for('static', filename='images/speakers/shankha.jpg') }}" alt="Shankha Sanyal">
+            <h3><a href="#">Shankha Sanyal</a></h3>
+            <p>
+                Understanding the relationship between speech, emotion and language
+                in Rabindra Sangeet and classical music
+            </p>
+        </div>
+
+
+    </div>
+</section>
+
+<!-- GARIMA PDF SECTION -->
+<section class="garima-pdf">
+    <div class="garima-pdf-container">
+        <iframe
+            src="{{ url_for('static', filename='pdfs/garima.pdf') }}"
+            title="GARIMA Program PDF"
+            loading="lazy"
+        ></iframe>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-bottom">
+        <p>
+            Copyright © National Institute for Materials Science, NIMS Japan,
+            and Indian Institute of Technology, IIT Mandi India 2025
+        </p>
+    </div>
+</footer>
+
+{% endblock %}
