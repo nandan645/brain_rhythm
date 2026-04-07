@@ -93,20 +93,46 @@
             </p>
         </div>
 
+        <!-- Center: database scope (pie chart) -->
+        <!-- <div class="footer-chart" aria-label="Overview of database content areas">
+            <h4 class="footer-chart-title">Content overview</h4>
+            <p class="footer-chart-note">Slice size = number of published topic pages in that area (templates on this site).</p>
+            <div class="footer-chart-wrap">
+                <canvas id="footerPieChart" width="280" height="280"></canvas>
+            </div>
+        </div> -->
+
         <!-- Right: Combined Links Column -->
         <div class="footer-links">
             <h4>Connect us</h4>
-            <ul>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCkMHtWzaIwD38nW4smQN7jQ">
-                        YouTube
-                    </a>
-                </li>
-            </ul>
+            <div class="social-links">
+                <a
+                    class="social-icon-link"
+                    href="https://www.youtube.com/channel/UCkMHtWzaIwD38nW4smQN7jQ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                    title="YouTube"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M23.5 7.2c-.3-1.2-1.2-2.1-2.4-2.4C18.9 4.2 12 4.2 12 4.2s-6.9 0-9.1.6C1.7 5.1.8 6 .5 7.2 0 9.3 0 12 0 12s0 2.7.5 4.8c.3 1.2 1.2 2.1 2.4 2.4 2.2.6 9.1.6 9.1.6s6.9 0 9.1-.6c1.2-.3 2.1-1.2 2.4-2.4.5-2.1.5-4.8.5-4.8s0-2.7-.5-4.8ZM9.8 15.3V8.7l5.8 3.3-5.8 3.3Z"/>
+                    </svg>
+                </a>
+                <a
+                    class="social-icon-link"
+                    href="mailto:pushpendra@iitmandi.ac.in"
+                    aria-label="Email"
+                    title="Email"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M3 5h18a2 2 0 0 1 2 2v.5L12 14 1 7.5V7a2 2 0 0 1 2-2Zm20 4.6V17a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9.6l10.4 6a1.2 1.2 0 0 0 1.2 0L23 9.6Z"/>
+                    </svg>
+                </a>
+            </div>
 
             <h4 class="footer-subheading">About us</h4>
             <ul>
-                <li><a href="#">Click here</a></li>
+                <li><a href="{{ url_for('about_us') }}">Click here</a></li>
             </ul>
         </div>
 
@@ -120,5 +146,52 @@
         </p>
     </div>
 </footer>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+<script>
+(function () {
+    var canvas = document.getElementById("footerPieChart");
+    if (!canvas || typeof Chart === "undefined") return;
+
+    var ctx = canvas.getContext("2d");
+    var labels = {{ (chart_labels | default([], true)) | tojson }};
+    var values = {{ (chart_values | default([], true)) | tojson }};
+    if (!values.some(function (v) { return v > 0; })) return;
+
+    new Chart(ctx, {
+        type: "pie",
+        data: {
+            labels: labels,
+            datasets: [{
+                data: values,
+                backgroundColor: [
+                    "#6B9AC4",
+                    "#E8A598",
+                    "#97D8C4",
+                    "#B8A9C9",
+                    "#F4D06F"
+                ],
+                borderWidth: 2,
+                borderColor: "#f5f6f4"
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: {
+                    position: "bottom",
+                    labels: {
+                        color: "#111",
+                        font: { family: "'Inter', sans-serif", size: 11 },
+                        boxWidth: 12,
+                        padding: 10
+                    }
+                }
+            }
+        }
+    });
+})();
+</script> -->
 
 {% endblock %}

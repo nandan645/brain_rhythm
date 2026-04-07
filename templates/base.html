@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>NeuroResonance</title>
     <link rel="icon" href="{{ url_for('static', filename='media/favicon.png') }}" type="image/png">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -12,13 +13,32 @@
 </head>
 <body>
 
-<nav class="navbar">
-    <!-- <div class="logo">NeuroResonance</div> -->
-    <div class="logo">
-        <a href="{{ url_for('home') }}">NeuroResonance</a>
-    </div>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-    <ul class="nav-links">
+<nav class="navbar" aria-label="Primary navigation">
+    <div class="nav-bar-inner">
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='media/favicon.png') }}" alt="NeuroResonance logo">
+                <span>NeuroResonance</span>
+            </a>
+        </div>
+
+        <button
+            type="button"
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+            aria-label="Open menu"
+        >
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <div class="nav-backdrop" aria-hidden="true"></div>
+
+        <ul class="nav-links" id="primary-nav">
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('neural_clocks') }}">Neural Clocks</a></li>
 
@@ -28,6 +48,7 @@
                 <li class="dropdown-submenu">
                     <a href="{{ url_for('brain_components') }}">Brain Components ▸</a>
                     <ul class="submenu">
+                        <li><a href="{{ url_for('brain_components') }}">Overview</a></li>
                         <li><a href="{{ url_for('cerebellum') }}">Cerebellum</a></li>
                         <li><a href="{{ url_for('hippocampus') }}">Hippocampus</a></li>
                         <li><a href="{{ url_for('blood_vessel_network') }}">Blood Vessel Network</a></li>
@@ -35,6 +56,7 @@
                         <li class="dropdown-submenu">
                             <a href="{{ url_for('microtubule') }}">Microtubule ▸</a>
                             <ul class="submenu">
+                                <li><a href="{{ url_for('microtubule') }}">Overview</a></li>
                                 <li><a href="{{ url_for('tubulin') }}">Tubulin</a></li>
                             </ul>
                         </li>
@@ -51,6 +73,7 @@
                 <li class="dropdown-submenu">
                     <a href="{{ url_for('eeg_ddg') }}">EEG and DDG ▸</a>
                     <ul class="submenu">
+                        <li><a href="{{ url_for('eeg_ddg') }}">Overview</a></li>
                         <li><a href="{{ url_for('tutorial') }}">Tutorial</a></li>
                         <li><a href="{{ url_for('eeg_music') }}">EEG Music</a></li>
                         <li><a href="{{ url_for('ddg_device') }}">DDG Device First Prototype</a></li>
@@ -69,14 +92,15 @@
             <ul class="dropdown-menu">
                 <li><a href="{{ url_for('cancer') }}">Cancer</a></li>
                 <li><a href="{{ url_for('schizophrenia') }}">Schizophrenia</a></li>
-                <li><a href="{{ url_for('alzheimers') }}">Alzheimers</a></li>            
+                <li><a href="{{ url_for('alzheimers') }}">Alzheimers</a></li>
                 <li><a href="{{ url_for('thrombosis') }}">Thrombosis</a></li>
             </ul>
         </li>
 
         <li class="nav-item dropdown">
-            <a href="{{ url_for('protein') }}">Protein ▾</a>
+            <a href="#">Protein ▾</a>
             <ul class="dropdown-menu">
+                <li><a href="{{ url_for('protein') }}">Overview</a></li>
                 <li><a href="{{ url_for('circuit') }}">Circuit</a></li>
                 <li><a href="{{ url_for('vortex_synthesis') }}">Vortex synthesis</a></li>
                 <li><a href="{{ url_for('water') }}">Water</a></li>
@@ -91,15 +115,18 @@
                 <li><a href="{{ url_for('matrisneha') }}">Matrisneha</a></li>
                 <li><a href="{{ url_for('garima') }}">Garima</a></li>
                 <li><a href="{{ url_for('surobane') }}">Surobane</a></li>
-                
+
             </ul>
         </li>
-        <li><a href="{{ url_for('about') }}">About</a></li>
-        <li><a href="{{ url_for('about_us') }}">About Us</a></li>
-    </ul>
+        </ul>
+    </div>
 </nav>
 
+<main id="main-content">
 {% block content %}{% endblock %}
+</main>
 
+<script src="{{ url_for('static', filename='js/nav.js') }}" defer></script>
+<script src="{{ url_for('static', filename='js/download-gate.js') }}" defer></script>
 </body>
 </html>
