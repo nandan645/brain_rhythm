@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>NeuroResonance</title>
     <link rel="icon" href="{{ url_for('static', filename='media/favicon.png') }}" type="image/png">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -12,13 +13,32 @@
 </head>
 <body>
 
-<nav class="navbar">
-    <!-- <div class="logo">NeuroResonance</div> -->
-    <div class="logo">
-        <a href="{{ url_for('home') }}">NeuroResonance</a>
-    </div>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-    <ul class="nav-links">
+<nav class="navbar" aria-label="Primary navigation">
+    <div class="nav-bar-inner">
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='media/favicon.png') }}" alt="NeuroResonance logo">
+                <span>NeuroResonance</span>
+            </a>
+        </div>
+
+        <button
+            type="button"
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+            aria-label="Open menu"
+        >
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <div class="nav-backdrop" aria-hidden="true"></div>
+
+        <ul class="nav-links" id="primary-nav">
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('neural_clocks') }}">Neural Clocks</a></li>
 
@@ -28,6 +48,7 @@
                 <li class="dropdown-submenu">
                     <a href="{{ url_for('brain_components') }}">Brain Components ▸</a>
                     <ul class="submenu">
+                        <li><a href="{{ url_for('brain_components') }}">Overview</a></li>
                         <li><a href="{{ url_for('cerebellum') }}">Cerebellum</a></li>
                         <li><a href="{{ url_for('hippocampus') }}">Hippocampus</a></li>
                         <li><a href="{{ url_for('blood_vessel_network') }}">Blood Vessel Network</a></li>
@@ -35,6 +56,7 @@
                         <li class="dropdown-submenu">
                             <a href="{{ url_for('microtubule') }}">Microtubule ▸</a>
                             <ul class="submenu">
+                                <li><a href="{{ url_for('microtubule') }}">Overview</a></li>
                                 <li><a href="{{ url_for('tubulin') }}">Tubulin</a></li>
                             </ul>
                         </li>
@@ -51,6 +73,7 @@
                 <li class="dropdown-submenu">
                     <a href="{{ url_for('eeg_ddg') }}">EEG and DDG ▸</a>
                     <ul class="submenu">
+                        <li><a href="{{ url_for('eeg_ddg') }}">Overview</a></li>
                         <li><a href="{{ url_for('tutorial') }}">Tutorial</a></li>
                         <li><a href="{{ url_for('eeg_music') }}">EEG Music</a></li>
                         <li><a href="{{ url_for('ddg_device') }}">DDG Device First Prototype</a></li>
@@ -69,14 +92,15 @@
             <ul class="dropdown-menu">
                 <li><a href="{{ url_for('cancer') }}">Cancer</a></li>
                 <li><a href="{{ url_for('schizophrenia') }}">Schizophrenia</a></li>
-                <li><a href="{{ url_for('alzheimers') }}">Alzheimers</a></li>            
+                <li><a href="{{ url_for('alzheimers') }}">Alzheimers</a></li>
                 <li><a href="{{ url_for('thrombosis') }}">Thrombosis</a></li>
             </ul>
         </li>
 
         <li class="nav-item dropdown">
-            <a href="{{ url_for('protein') }}">Protein ▾</a>
+            <a href="#">Protein ▾</a>
             <ul class="dropdown-menu">
+                <li><a href="{{ url_for('protein') }}">Overview</a></li>
                 <li><a href="{{ url_for('circuit') }}">Circuit</a></li>
                 <li><a href="{{ url_for('vortex_synthesis') }}">Vortex synthesis</a></li>
                 <li><a href="{{ url_for('water') }}">Water</a></li>
@@ -91,15 +115,155 @@
                 <li><a href="{{ url_for('matrisneha') }}">Matrisneha</a></li>
                 <li><a href="{{ url_for('garima') }}">Garima</a></li>
                 <li><a href="{{ url_for('surobane') }}">Surobane</a></li>
-                
+
             </ul>
         </li>
-        <li><a href="{{ url_for('about') }}">About</a></li>
-        <li><a href="{{ url_for('about_us') }}">About Us</a></li>
-    </ul>
+        </ul>
+    </div>
 </nav>
 
+<main id="main-content">
 {% block content %}{% endblock %}
+</main>
 
+<script src="{{ url_for('static', filename='js/nav.js') }}" defer></script>
+<!-- <script src="{{ url_for('static', filename='js/download-gate.js') }}" defer></script> -->
+<!-- <div id="download-popup" class="popup-overlay">
+    <div class="popup-box">
+        <h2>Request Access</h2>
+        <p>Enter your email to request download access</p>
+
+        <input type="email" id="user-email" placeholder="Enter your email">
+
+        <div class="popup-actions">
+            <button onclick="submitDownloadRequest()">Submit</button>
+            <button onclick="closeDownloadPopup()">Cancel</button>
+        </div>
+    </div>
+</div> -->
+<div id="popup" class="download-popup" role="dialog" aria-modal="true" aria-labelledby="download-popup-title" onclick="closePopup()">
+    <div class="download-popup-card" onclick="event.stopPropagation()">
+        <div class="download-popup-header">
+            <span class="download-popup-kicker">Download access</span>
+            <h3 id="download-popup-title">Request Access</h3>
+            <p>Enter your email so we can send the download link and access details.</p>
+        </div>
+
+        <div class="download-popup-field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" placeholder="name@example.com" autocomplete="email">
+        </div>
+
+        <div id="download-status" class="download-popup-status" aria-live="polite"></div>
+
+        <div class="popup-actions download-popup-actions">
+            <button type="button" class="download-primary" onclick="submitEmail()">Submit</button>
+            <button type="button" class="download-secondary" onclick="closePopup()">Cancel</button>
+        </div>
+    </div>
+</div>
+<script>
+window.selectedFileId = null;
+let popupBusy = false;
+
+function openPopup(fileId) {
+    window.selectedFileId = fileId;
+    popupBusy = false;
+    setPopupState('idle');
+    document.getElementById("popup").style.display = "flex";
+    setTimeout(() => document.getElementById("email").focus(), 0);
+}
+
+function closePopup() {
+    if (popupBusy) {
+        return;
+    }
+    document.getElementById("popup").style.display = "none";
+}
+
+function setPopupState(state, message) {
+    const popup = document.getElementById("popup");
+    const status = document.getElementById("download-status");
+    const emailInput = document.getElementById("email");
+    const submitButton = document.querySelector(".download-primary");
+    const cancelButton = document.querySelector(".download-secondary");
+
+    popup.classList.toggle("is-loading", state === "loading");
+    popup.classList.toggle("is-success", state === "success");
+
+    if (status) {
+        status.textContent = message || "";
+        status.className = "download-popup-status";
+        if (state === "loading") {
+            status.classList.add("is-loading");
+        } else if (state === "success") {
+            status.classList.add("is-success");
+        }
+    }
+
+    if (emailInput) {
+        emailInput.disabled = state !== "idle";
+    }
+
+    if (submitButton) {
+        submitButton.disabled = state !== "idle";
+        submitButton.textContent = state === "loading" ? "Sending..." : state === "success" ? "Done" : "Submit";
+    }
+
+    if (cancelButton) {
+        cancelButton.textContent = state === "success" ? "Close" : "Cancel";
+    }
+}
+
+async function submitEmail() {
+    const email = document.getElementById("email").value.trim();
+
+    if (popupBusy) {
+        return;
+    }
+
+    if (!email) {
+        setPopupState('idle', 'Enter a valid email address.');
+        return;
+    }
+
+    if (!window.selectedFileId) {
+        setPopupState('idle', 'No file selected. Please try again.');
+        return;
+    }
+
+    popupBusy = true;
+    setPopupState('loading', 'Sending your request. This usually takes a few seconds.');
+
+    try {
+        const response = await fetch("/api/request-access", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: email,
+                file_id: window.selectedFileId
+            })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Something went wrong");
+        }
+
+        setPopupState(
+            'success',
+            data.message || 'Request submitted. If approved, your download link will be emailed to you and will expire after 10 minutes.'
+        );
+        popupBusy = false;
+    } catch (error) {
+        popupBusy = false;
+        setPopupState('idle', error.message || 'Unable to submit your request right now.');
+    }
+}
+</script>
+<script src="{{ url_for('static', filename='js/analytics.js') }}" defer></script>
 </body>
 </html>

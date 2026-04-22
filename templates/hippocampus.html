@@ -1,30 +1,74 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="page-hero hippocampus-hero" style="--hero-image: url('../images/hippocampus-hero.jpg');">
+
+<!-- HERO -->
+<section
+    class="page-hero hippocampus-hero"
+    style="--hero-image: url('../images/hippocampus-hero.jpg');"
+>
     <h1>Hippocampus</h1>
 </section>
 
+<!-- POLY TIME CRYSTAL SIMULATION -->
 <section class="simulation-section">
     <div class="simulation-header">
         <div class="simulation-title">
             <h2>Poly Time Crystal Simulation</h2>
             <p>Temporal phase behavior in hippocampal microstructure</p>
         </div>
+
         <div class="simulation-actions">
-            <a href="{{ url_for('static', filename='html/hippocampus_poly_time_crystal.html') }}" class="btn-secondary" target="_blank">Enlarge Preview</a>
-            <a href="#" class="btn-primary">Download</a>
+            <a
+                href="{{ url_for('static', filename='html/hippocampus_poly_time_crystal.html') }}"
+                class="btn-secondary"
+                target="_blank"
+            >
+                Enlarge Preview
+            </a>
+            <a href="#" onclick="openPopup(6); return false;" class="btn-primary">
+                Download
+            </a>
         </div>
     </div>
 
     <div class="simulation-container">
+        <!-- LEFT -->
         <div class="simulation-card">
-            <iframe src="{{ url_for('static', filename='simulations/hippocampus_poly_time_crystal.html') }}" class="simulation-embed" loading="lazy" title="Poly Time Crystal Simulation"></iframe>
+            <iframe
+                src="{{ url_for('static', filename='simulations/hippocampus_poly_time_crystal.html') }}"
+                class="simulation-embed"
+                loading="lazy"
+                title="Poly Time Crystal Simulation"
+            ></iframe>
         </div>
+
+        <!-- RIGHT -->
         <div class="simulation-info">
-            <div class="info-card"><h4>Methodology</h4><p>Phase mapping on hippocampal surfaces with continuous rendering.</p></div>
-            <div class="info-card"><h4>Parameters</h4><ul><li>Mesh: triangulated surfaces</li><li>Precision: single precision</li><li>Renderer: Three.js</li></ul></div>
-            <div class="info-card"><h4>Simulation Context</h4><ul><li>Runtime: Browser</li><li>Exports: STL</li><li>Controls: interactive</li></ul></div>
+            <div class="info-card">
+                <h4>Methodology</h4>
+                <p>
+                    Phase mapping on hippocampal surfaces with continuous rendering.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h4>Parameters</h4>
+                <ul>
+                    <li>Mesh: triangulated surfaces</li>
+                    <li>Precision: single precision</li>
+                    <li>Renderer: Three.js</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h4>Simulation Context</h4>
+                <ul>
+                    <li>Runtime: Browser</li>
+                    <li>Exports: STL</li>
+                    <li>Controls: interactive</li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
@@ -32,13 +76,74 @@
 <!-- DATA FILES SECTION -->
 <section class="data-assets-section">
     <div class="data-assets-grid">
-        <div class="asset-card"><h3>Structural File</h3><div class="asset-box"><div class="asset-preview"><img src="{{ url_for('static', filename='images/hippocampus/structural.jpg') }}" alt="Structural file preview"></div><div class="asset-actions"><a href="#" class="btn-secondary">Enlarge Preview</a><a href="#" class="btn-primary">Download</a></div></div></div>
-        <div class="asset-card"><h3>Resonance Map</h3><div class="asset-box"><div class="asset-preview"><img src="{{ url_for('static', filename='images/hippocampus/resonance.jpg') }}" alt="Resonance preview"></div><div class="asset-actions"><a href="#" class="btn-secondary">Enlarge Preview</a><a href="#" class="btn-primary">Download</a></div></div></div>
-        <div class="asset-card"><h3>Electric Field</h3><div class="asset-box"><div class="asset-preview"><img src="{{ url_for('static', filename='images/hippocampus/electric_field.gif') }}" alt="Electric field preview"></div><div class="asset-actions"><a href="#" class="btn-secondary">Enlarge Preview</a><a href="#" class="btn-primary">Download</a></div></div></div>
-        <div class="asset-card"><h3>Magnetic Field</h3><div class="asset-box"><div class="asset-preview"><img src="{{ url_for('static', filename='images/hippocampus/magnetic_field.gif') }}" alt="Magnetic field preview"></div><div class="asset-actions"><a href="#" class="btn-secondary">Enlarge Preview</a><a href="#" class="btn-primary">Download</a></div></div></div>
+
+        <!-- CARD 1 -->
+        <div class="asset-card">
+            <h3>Structural File</h3>
+            <div class="asset-box">
+                <div class="asset-preview">
+                    <img src="{{ url_for('static', filename='images/hippocampus/structural.jpg') }}" alt="Structural file preview">
+                </div>
+                <div class="asset-actions">
+                    <a href="#" class="btn-secondary">Enlarge Preview</a>
+                    <a href="#" onclick="openPopup(7); return false;" class="btn-primary">Download</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="asset-card">
+            <h3>Resonance Map</h3>
+            <div class="asset-box">
+                <div class="asset-preview">
+                    <img src="{{ url_for('static', filename='images/hippocampus/resonance.jpg') }}" alt="Resonance preview">
+                </div>
+                <div class="asset-actions">
+                    <a href="#" class="btn-secondary">Enlarge Preview</a>
+                    <a href="#" onclick="openPopup(8); return false;" class="btn-primary">Download</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="asset-card">
+            <h3>Electric Field</h3>
+            <div class="asset-box">
+                <div class="asset-preview">
+                    <img src="{{ url_for('static', filename='images/hippocampus/electric_field.gif') }}" alt="Electric field preview">
+                </div>
+                <div class="asset-actions">
+                    <a href="#" class="btn-secondary">Enlarge Preview</a>
+                    <a href="#" onclick="openPopup(9); return false;" class="btn-primary">Download</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="asset-card">
+            <h3>Magnetic Field</h3>
+            <div class="asset-box">
+                <div class="asset-preview">
+                    <img src="{{ url_for('static', filename='images/hippocampus/magnetic_field.gif') }}" alt="Magnetic field preview">
+                </div>
+                <div class="asset-actions">
+                    <a href="#" class="btn-secondary">Enlarge Preview</a>
+                    <a href="#" onclick="openPopup(10); return false;" class="btn-primary">Download</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
-<footer class="site-footer"><div class="footer-bottom"><p>Copyright © National Institute for Materials Science, NIMS Japan, and Indian Institute of Technology, IIT Mandi India 2025</p></div></footer>
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-bottom">
+        <p>
+            Copyright © National Institute for Materials Science, NIMS Japan,
+            and Indian Institute of Technology, IIT Mandi India 2025
+        </p>
+    </div>
+</footer>
 
 {% endblock %}

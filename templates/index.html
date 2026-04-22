@@ -76,6 +76,46 @@
         </div>
     </div>
 </section>
+
+<section class="analytics-section">
+  <div class="analytics-container">
+    <div class="analytics-header">
+      <h2>Live Analytics Overview</h2>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-icon">👥</div>
+        <div class="kpi-value" id="total-users">0</div>
+        <div class="kpi-label">Unique Users</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">📊</div>
+        <div class="kpi-value" id="total-visits">0</div>
+        <div class="kpi-label">Total Visits</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">⏱</div>
+        <div class="kpi-value" id="avg-session">0s</div>
+        <div class="kpi-label">Avg Session</div>
+      </div>
+    </div>
+
+    <!-- Charts Grid -->
+    <div class="charts-grid">
+      <div class="chart-card large-chart">
+        <h4>Page Visits Trend</h4>
+        <canvas id="trend-line"></canvas>
+      </div>
+      <div class="chart-card small-chart">
+        <h4>Page Distribution</h4>
+        <canvas id="distribution-pie"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="site-footer">
     <div class="footer-main">
 
@@ -93,24 +133,179 @@
             </p>
         </div>
 
+        <!-- Center: database scope (pie chart) -->
+        <!-- <div class="footer-chart" aria-label="Overview of database content areas">
+            <h4 class="footer-chart-title">Content overview</h4>
+            <p class="footer-chart-note">Slice size = number of published topic pages in that area (templates on this site).</p>
+            <div class="footer-chart-wrap">
+                <canvas id="footerPieChart" width="280" height="280"></canvas>
+            </div>
+        </div> -->
+
         <!-- Right: Combined Links Column -->
         <div class="footer-links">
             <h4>Connect us</h4>
-            <ul>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCkMHtWzaIwD38nW4smQN7jQ">
-                        YouTube
-                    </a>
-                </li>
-            </ul>
+            <div class="social-links">
+                <a
+                    class="social-icon-link"
+                    href="https://www.youtube.com/channel/UCkMHtWzaIwD38nW4smQN7jQ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                    title="YouTube"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M23.5 7.2c-.3-1.2-1.2-2.1-2.4-2.4C18.9 4.2 12 4.2 12 4.2s-6.9 0-9.1.6C1.7 5.1.8 6 .5 7.2 0 9.3 0 12 0 12s0 2.7.5 4.8c.3 1.2 1.2 2.1 2.4 2.4 2.2.6 9.1.6 9.1.6s6.9 0 9.1-.6c1.2-.3 2.1-1.2 2.4-2.4.5-2.1.5-4.8.5-4.8s0-2.7-.5-4.8ZM9.8 15.3V8.7l5.8 3.3-5.8 3.3Z"/>
+                    </svg>
+                </a>
+                <a
+                    class="social-icon-link"
+                    href="mailto:pushpendra@iitmandi.ac.in"
+                    aria-label="Email"
+                    title="Email"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M3 5h18a2 2 0 0 1 2 2v.5L12 14 1 7.5V7a2 2 0 0 1 2-2Zm20 4.6V17a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9.6l10.4 6a1.2 1.2 0 0 0 1.2 0L23 9.6Z"/>
+                    </svg>
+                </a>
+            </div>
 
             <h4 class="footer-subheading">About us</h4>
             <ul>
-                <li><a href="#">Click here</a></li>
+                <li><a href="{{ url_for('about_us') }}">Click here</a></li>
             </ul>
         </div>
-
     </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+  /* Clean minimal analytics styles */
+  .analytics-section {
+    padding: clamp(48px, 6vw, 80px) 20px;
+    background: #eee7e2;
+    border-top: 1px solid #dfd5cd;
+    border-bottom: 1px solid #dfd5cd;
+  }
+
+  .analytics-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    background: #f5f2ef;
+    border: 1px solid #ddd2ca;
+    border-radius: 16px;
+    padding: clamp(20px, 3.5vw, 34px);
+  }
+
+  .analytics-header {
+    margin-bottom: 24px;
+  }
+
+  .analytics-header h2 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: clamp(1.3rem, 2vw, 1.8rem);
+    font-weight: 600;
+    color: #17202a;
+    letter-spacing: 0.01em;
+    margin: 0;
+  }
+
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .kpi-card {
+    background: #fbf9f7;
+    border: 1px solid #d9d1ca;
+    border-radius: 12px;
+    padding: 14px 12px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(16, 24, 40, 0.08);
+  }
+
+  .kpi-icon {
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+
+  .kpi-value {
+    font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+    font-weight: 700;
+    color: #1f2a37;
+    margin-bottom: 3px;
+  }
+
+  .kpi-label {
+    font-size: 0.72rem;
+    color: #4b5563;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .charts-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .chart-card {
+    background: #fbf9f7;
+    border: 1px solid #d9d1ca;
+    border-radius: 12px;
+    padding: clamp(12px, 2vw, 18px);
+  }
+
+  .chart-card h4 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: clamp(0.92rem, 1.6vw, 1.05rem);
+    color: #26313d;
+    margin-bottom: 12px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  canvas {
+    max-height: 320px;
+  }
+
+  @media (max-width: 1024px) {
+    .charts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .analytics-section {
+      padding: 36px 14px;
+    }
+
+    .analytics-container {
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .kpi-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .kpi-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  </style>
+
+</section>
 
     <!-- Bottom copyright bar -->
     <div class="footer-bottom">
@@ -120,5 +315,52 @@
         </p>
     </div>
 </footer>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+<script>
+(function () {
+    var canvas = document.getElementById("footerPieChart");
+    if (!canvas || typeof Chart === "undefined") return;
+
+    var ctx = canvas.getContext("2d");
+    var labels = {{ (chart_labels | default([], true)) | tojson }};
+    var values = {{ (chart_values | default([], true)) | tojson }};
+    if (!values.some(function (v) { return v > 0; })) return;
+
+    new Chart(ctx, {
+        type: "pie",
+        data: {
+            labels: labels,
+            datasets: [{
+                data: values,
+                backgroundColor: [
+                    "#6B9AC4",
+                    "#E8A598",
+                    "#97D8C4",
+                    "#B8A9C9",
+                    "#F4D06F"
+                ],
+                borderWidth: 2,
+                borderColor: "#f5f6f4"
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: {
+                    position: "bottom",
+                    labels: {
+                        color: "#111",
+                        font: { family: "'Inter', sans-serif", size: 11 },
+                        boxWidth: 12,
+                        padding: 10
+                    }
+                }
+            }
+        }
+    });
+})();
+</script> -->
 
 {% endblock %}

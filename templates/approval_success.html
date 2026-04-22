@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="approval-page">
+    <div class="approval-shell">
+        <div class="approval-card">
+            <h1>{{ title or "Approved" }}</h1>
+            <p class="approval-lead">
+                {{ message or "Done." }}
+            </p>
+
+            <div class="approval-details">
+                <p><strong>File:</strong> {{ file_name }}</p>
+                <p><strong>Status:</strong> {{ status_text or "Sent successfully" }}</p>
+                {% if show_email %}
+                <p><strong>Recipient:</strong> {{ email }}</p>
+                {% endif %}
+            </div>
+
+            <div class="approval-actions">
+                <a class="approval-primary" href="{{ url_for('home') }}">Back to home</a>
+            </div>
+
+            <p class="approval-note">You can close this tab.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
